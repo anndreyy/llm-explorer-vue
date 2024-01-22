@@ -1,0 +1,106 @@
+@import "./base.css";
+
+button.default {
+  background: white;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 21px;
+  padding: 2px 20px;
+
+  svg {
+    width: 30px;
+  }
+}
+
+body {
+  display: flex;
+  background-color: #abc4ff;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.chat-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "history chat settings";
+  height: 100vh;
+  min-width: 80vw;
+
+  // color: white;
+}
+
+.chat-header {
+  grid-area: header;
+  /* Estilos para o cabeçalho */
+  padding: 15px;
+}
+
+.chat-history {
+  grid-area: history;
+  /* Estilos para o painel de histórico */
+  padding: 0 10px;
+}
+
+.current-chat {
+  grid-area: chat;
+  /* Estilos para o chat atual */
+  background: #edf2fb;
+  padding: 40px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "messages"
+    "input";
+  border-top-left-radius: 30px;
+  /* border-top-right-radius: 30px; */
+  /* border-bottom-right-radius: 30px; */
+  border-bottom-left-radius: 30px;
+
+  .message-input-field {
+    display: flex;
+
+    textarea {
+      width: 100%;
+      border-radius: 31px;
+      padding: 12px;
+      font-size: 18px;
+      resize: none;
+      overflow-y: hidden; /* Esconde a barra de rolagem vertical */
+      box-sizing: border-box;
+    }
+
+    button {
+      background: none;
+      border: 0;
+      width: 50px;
+      cursor: pointer;
+    }
+  }
+}
+
+.chat-settings {
+  grid-area: settings;
+  /* Estilos para as configurações */
+  padding: 0px 10px;
+  background: #dce6f7;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+
+  .form {
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+.message-input {
+  grid-area: input;
+  /* Estilos para a entrada de mensagem */
+  /* Garanta que esteja no fim do grid, se necessário adicione mais estilos aqui */
+}
