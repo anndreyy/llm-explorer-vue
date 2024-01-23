@@ -2,50 +2,51 @@
     <div class="chat-settings-sidebar">
 
         <div class="form">
-            <h2>Settings</h2>
+            <h1 class="font-weight-medium">Settings</h1>
             <form @submit.prevent="submitForm">
                 <div class="form-group">
-                    <label for="llm">LLM</label>
-                    <select id="llm" v-model="form.llm" required>
+                    <label for="llm" class="form-label">LLM Family</label>
+                    <select id="llm" v-model="form.llm" required class="form-control">
                         <option value="">Please select an option</option>
-                        <option value="llm1">LLM 1</option>
-                        <option value="llm2">LLM 2</option>
-                        <option value="llm3">LLM 3</option>
+                        <option value="Gemini">Gemini</option>
+                        <option value="llm2">GPT4</option>
+                        <option value="llm3">GPT3.5</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="model">Model</label>
-                    <select id="model" v-model="form.model" required>
+                    <label for="model" class="form-label">Model</label>
+                    <select id="model" v-model="form.model" required class="form-control">
                         <option value="">Please select an option</option>
-                        <option value="model1">Model 1</option>
-                        <option value="model2">Model 2</option>
-                        <option value="model3">Model 3</option>
+                        <option value="Gemini PRO">Gemini PRO</option>
+                        <option value="model2">GPT 4</option>
+                        <option value="model3">GPT 4 Turbo</option>
+                        <option value="model3">GPT 3.5 Turbo</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="temperature">Temperature</label>
-                    <input type="number" id="temperature" v-model.number="form.temperature" min="0" step="any" required>
+                    <label for="temperature" class="form-label">Temperature</label>
+                    <input type="number" id="temperature" v-model.number="form.temperature" min="0.0" max="0.9" step="any" required class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="base">Base</label>
-                    <select id="base" v-model="form.base" @change="checkForFileImport" required>
+                    <label for="base" class="form-label">Base</label>
+                    <select id="base" v-model="form.base" @change="checkForFileImport" required class="form-control">
                         <option value="">Please select an option</option>
-                        <option value="option1">Option 1</option>
+                        <option value="option1">Corporativo</option>
                         <option value="option2">Option 2</option>
                         <option value="import">Import File</option>
                     </select>
                 </div>
 
                 <div v-if="showFileInput" class="form-group">
-                    <input type="file" @change="handleFileUpload">
+                    <input type="file" @change="handleFileUpload" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="initialPrompt">Initial Prompt</label>
-                    <textarea id="initialPrompt" v-model="form.initialPrompt" required>Default value</textarea>
+                    <label for="initialPrompt" class="form-label">Initial Prompt</label>
+                    <textarea id="initialPrompt" v-model="form.initialPrompt" required class="form-control">Default value</textarea>
                 </div>
 
             </form>
@@ -58,10 +59,10 @@
 import { ref } from 'vue';
 
 const form = ref({
-    llm: '',
-    model: '',
-    temperature: 0,
-    base: ''
+    llm: 'Gemini',
+    model: 'Gemini PRO',
+    temperature: 0.7,
+    base: 'option1'
 });
 
 const showFileInput = ref(false);

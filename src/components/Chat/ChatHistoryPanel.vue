@@ -1,6 +1,6 @@
 <template>
     <div >
-        <button class="add-message-button default">
+        <button class="add-message-button default btn">
             <IconPlus />
             Nova mensagem
         </button>

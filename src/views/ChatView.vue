@@ -6,10 +6,6 @@ import ChatSettingsSidebar from '../components/Chat/ChatSettingsSidebar.vue'
 
 <template>
   <div class="chat-container">
-    <!-- Cabeçalho -->
-    <header class="chat-header">
-      <h1>LLM Explorer</h1>
-    </header>
 
     <!-- Corpo Principal -->
     <!-- Painel de histórico de chats -->
