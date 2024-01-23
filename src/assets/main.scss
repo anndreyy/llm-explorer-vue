@@ -96,6 +96,11 @@ div.conteiner {
       cursor: pointer;
     }
   }
+
+  .chat-history-html{
+    max-height: 647px;
+    overflow: auto;
+  }
 }
 
 .chat-settings {
