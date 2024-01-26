@@ -32,10 +32,13 @@ div.container {
 
 .chat-container {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr; /* Ajusta as proporções das colunas */
+  grid-template-columns: 1fr 3fr 1fr;
+  /* Ajusta as proporções das colunas */
   grid-template-areas: "history chat settings";
-  width: 80%; /* Ajusta a largura para ocupar toda a largura disponível */
-  height: 100%; /* Ajusta a altura para ocupar toda a altura disponível */
+  width: 80%;
+  /* Ajusta a largura para ocupar toda a largura disponível */
+  height: 100%;
+  /* Ajusta a altura para ocupar toda a altura disponível */
 }
 
 .chat-header {
@@ -52,9 +55,47 @@ div.container {
   justify-content: space-between;
   align-items: center;
 
-  h1{
-    color: #fb4402;
-    font-weight: 500;
+  .sidea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    figure{
+      width: 50px;
+  
+      img{
+        width: 100%
+      }
+    }
+  
+    h1 {
+      margin-left: 5px;
+      color: #fb4402;
+      font-weight: 500;
+    }
+  }
+
+
+  .sideb {
+    display: flex;
+
+    .container-language {
+      margin-right: 10px;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.8em;
+        color: var(--color-text);
+
+        &.selected {
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
 
@@ -75,10 +116,10 @@ div.container {
   grid-template-areas:
     "messages"
     "input";
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 10px;
 
@@ -91,19 +132,20 @@ div.container {
       padding: 12px;
       font-size: 18px;
       resize: none;
-      overflow-y: hidden; /* Esconde a barra de rolagem vertical */
+      overflow-y: hidden;
+      /* Esconde a barra de rolagem vertical */
       box-sizing: border-box;
     }
 
     button {
-      background: none;
       border: 0;
       width: 50px;
       cursor: pointer;
+      margin-left: 9px;
     }
   }
 
-  .chat-history-html{
+  .chat-history-html {
     max-height: 647px;
     overflow: auto;
   }
@@ -113,12 +155,13 @@ div.container {
   grid-area: settings;
   /* Estilos para as configurações */
   padding: 0px 10px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  // border-top-right-radius: 30px;
+  // border-bottom-right-radius: 30px;
 
   .form {
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 18px;
+    border: 1px solid gray;
   }
 }
 

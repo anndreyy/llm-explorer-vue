@@ -1,9 +1,10 @@
 <template>
-    <div >
-        <button class="add-message-button default btn">
-            <IconPlus />
-            Nova mensagem
-        </button>
+    <div>
+        <div class="group-btn">
+            <button role="button" class="btn normal">
+                <span class="text">New Chat</span>
+            </button>
+        </div>
     </div>
 </template>
 <script setup>

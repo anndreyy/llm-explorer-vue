@@ -2,10 +2,12 @@
 <template>
     <div>
         <textarea v-model="promptTextArea" @input="autoExpand" name="promptTextArea" id="promptTextArea" rows="1"
-            placeholder="Mensagem">
+            placeholder="Enter prompt">
         </textarea>
-        <button>
-            <IconSendVue />
+        <button class="btn circle">
+            <span>
+                <IconSendVue />
+            </span>
         </button>
 
     </div>

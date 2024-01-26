@@ -6,8 +6,8 @@
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
+  --vt-c-black: #181724;
+  --vt-c-black-soft: black;
   --vt-c-black-mute: #282828;
 
   --vt-c-indigo: #2c3e50;
@@ -76,15 +76,26 @@ body {
 }
 
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5rem;
   font-weight: 300;
   line-height: 1.5;
-  color: #1e2022;
+  color: var(--color-text);
 }
 
 .font-weight-medium {
-  font-weight: 500!important;
+  font-weight: 500 !important;
 }
 
 .form-control {
@@ -95,12 +106,12 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #1e2022;
-  background-color: #fff;
+  color: var(--color-text);
+  background-color: var(--color-background-soft);
   background-clip: padding-box;
   border: 0.0625rem solid #d5dae2;
   border-radius: 0.3125rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .form-label {
@@ -116,22 +127,54 @@ textarea {
 }
 
 .btn {
-  display: inline-block;
-  font-weight: 500;
-  color: #1e2022;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px -5px rgba(151, 65, 252, .2);
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  padding: 3px;
+  text-decoration: none;
   user-select: none;
-  background-color: transparent;
-  border: 0.0625rem solid transparent;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.3125rem;
-  transition: all .2s ease-in-out;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  
+  &.normal{
+    max-width: 100%;
+    min-width: 140px;
+    
+  }
+
+  &.circle span, &.circle{
+    border-radius: 72px;
+  }
+  &.circle span{
+    padding: 7px;
+  }
+
+  &:hover span{
+    background: none;
+  }
+
+  span {
+    background-color: #05062d;
+    padding: 10px 13px;;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+
+  }
+
+  #selector .selected span, #selector button:hover span {
+    background: none;
+}
 }
 
 :focus-visible {

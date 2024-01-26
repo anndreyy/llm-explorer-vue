@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="base" class="form-label">Base</label>
+                    <label for="base" class="form-label">Knowledgebase</label>
                     <select id="base" v-model="form.base" @change="checkForFileImport" required class="form-control">
                         <option value="">Please select an option</option>
                         <option value="option1">Corporativo</option>

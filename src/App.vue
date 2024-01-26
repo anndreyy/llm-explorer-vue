@@ -6,10 +6,16 @@ import ButtonDarkMode from './components/Commons/ButtonDarkMode.vue'
 <template>
   <!-- Cabeçalho -->
   <header class="chat-header">
-    <div>
+    <div class="sidea">
+      <figure><img src="./assets/icons/logo.png"></figure>
       <h1>LLM Explorer</h1>
     </div>
-    <div>
+    <div class="sideb">
+      <div class="container-language">
+        <button class="selected">EN</button>
+        <button >ES</button>
+        <button >PT-BR</button>
+      </div>
       <ButtonDarkMode />
     </div>
   </header>
