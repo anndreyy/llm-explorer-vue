@@ -55,21 +55,21 @@ div.container {
   justify-content: space-between;
   align-items: center;
 
-  .sidea{
+  .sidea {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 
-    figure{
+    figure {
       width: 50px;
-  
-      img{
+
+      img {
         width: 100%
       }
     }
-  
+
     h1 {
       margin-left: 5px;
       color: #fb4402;
@@ -103,6 +103,43 @@ div.container {
   grid-area: history;
   /* Estilos para o painel de histórico */
   padding: 0 10px;
+
+  .history-chats {
+    padding-top: 19px;
+
+    ul {
+      box-sizing: border-box;
+      margin: 0;
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        // div{
+        //   // padding: 0 1px;
+        // }
+      }
+
+      .llm {
+        // background: red;
+        background: var(--color-background-invert);
+        color: var(--color-background-text-invert);
+        border-radius: 8px;
+        font-size: 0.8em;
+        margin-right: 1px;
+        padding: 0 4px;
+      }
+
+      .message {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
 }
 
 .current-chat {
