@@ -21,6 +21,9 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --vt-c-bg-animation: linear-gradient(144deg, #ff0000, #ffea00 50%);
+  --vt-c-bg-animation2: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
 }
 
 /* semantic color variables for this project */
@@ -34,11 +37,14 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+  --color-text2: var(--vt-c-black);
 
   --section-gap: 160px;
 
   --color-background-invert: var(--vt-c-black-soft);
-  --color-background-text-invert: var(--vt-c-white)
+  --color-background-text-invert: var(--vt-c-white);
+
+  --color-border-animation: var(--vt-c-bg-animation2)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,9 +58,11 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+    --color-text2: var(--vt-c-white);
 
     --color-background-invert: var(--vt-c-white);
-    --color-background-text-invert: var(--vt-c-black-soft)
+    --color-background-text-invert: var(--vt-c-black-soft);
+    --color-border-animation: var(--vt-c-bg-animation)
   }
 }
 
@@ -132,8 +140,29 @@ textarea {
   resize: vertical;
 }
 
+/* @keyframes gradientAnimation {
+  0% {
+      background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  }
+  25% {
+      background-image: linear-gradient(144deg, #007bff, #00ffc6 50%);
+  }
+  50% {
+      background-image: linear-gradient(144deg, #ff00ff, #1ae3ff 50%);
+  }
+  75% {
+      background-image: linear-gradient(144deg, #ff0000, #ffea00 50%);
+  }
+  100% {
+      background-image: linear-gradient(144deg, #800080, #ff80bf 50%);
+  }
+} */
+
 .btn {
-  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  /* animation: gradientAnimation 10s ease infinite; */
+
+  /* background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb); */
+  background-image: var(--color-border-animation);
   border: 0;
   border-radius: 8px;
   box-shadow: 0 15px 30px -5px rgba(151, 65, 252, .2);
@@ -168,10 +197,13 @@ textarea {
 
   &:hover span {
     background: none;
+    color: black;
   }
 
   span {
-    background-color: #05062d;
+    /* background-color: #05062d; */
+    color: var(--color-text2);
+    background-color: var(--color-background-soft);
     padding: 10px 13px;
     ;
     border-radius: 6px;
