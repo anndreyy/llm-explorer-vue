@@ -17,7 +17,7 @@
                     <div class="message">Forecast 2024</div>
                 </li>
                 <li>
-                    <div class="llm">Llama 2</div>
+                    <div class="llm">Llama2</div>
                     <div class="message">Escreva um e-mail...</div>
                 </li>
             </ul>

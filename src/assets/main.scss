@@ -162,6 +162,7 @@ div.container {
 
   .message-input-field {
     display: flex;
+    align-items: center;
 
     textarea {
       width: 100%;
@@ -172,11 +173,14 @@ div.container {
       overflow-y: hidden;
       /* Esconde a barra de rolagem vertical */
       box-sizing: border-box;
+      color: var(--color-text);
+      background-color: var(--color-background-soft);
     }
 
     button {
       border: 0;
       width: 50px;
+      height: 47px;
       cursor: pointer;
       margin-left: 9px;
     }
@@ -198,7 +202,7 @@ div.container {
   .form {
     padding: 10px;
     border-radius: 18px;
-    border: 1px solid gray;
+    border: 1px solid var(--color-border);
   }
 }
 

@@ -15,16 +15,45 @@ export default {
             darkMode: false
         };
     },
+    mounted() {
+        this.initializeTheme();
+    },
     methods: {
         toggleDarkMode() {
             this.darkMode = !this.darkMode;
-            // Adicione aqui a lógica para alternar o modo escuro no aplicativo
+            this.applyDarkMode();
+            this.saveThemePreference();
+        },
+        initializeTheme() {
+            const savedTheme = localStorage.getItem('themePreference');
+            if (savedTheme) {
+                this.darkMode = savedTheme === 'dark';
+            } else {
+                // Use a preferência do sistema se nenhuma preferência estiver salva
+                this.darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            }
+            this.applyDarkMode();
+        },
+        applyDarkMode() {
+            if (this.darkMode) {
+                document.documentElement.classList.add('force-dark');
+                document.documentElement.classList.remove('force-light');
+            } else {
+                document.documentElement.classList.add('force-light');
+                document.documentElement.classList.remove('force-dark');
+            }
+        },
+        saveThemePreference() {
+            const preference = this.darkMode ? 'dark' : 'light';
+            localStorage.setItem('themePreference', preference);
         }
     }
 };
+
 </script>
 
-<style scoped>
+<style>
+
 .toggle-switch {
     display: inline-block;
     position: relative;
