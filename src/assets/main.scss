@@ -8,8 +8,8 @@ button.default {
   align-items: center;
   border-radius: 21px;
   padding: 2px 20px;
-  background-color: #1267fc;
-  border-color: #1267fc;
+  background-color: #fb4402;
+  border-color: #fb4402;
   color: white;
 
   svg {
@@ -17,16 +17,17 @@ button.default {
   }
 }
 
-div.conteiner {
+div.container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 100vh;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   z-index: 0;
-  padding-top: 85px;
+  /* padding-top: 85px; */
   width: 100vw;
+  height: calc(100vh - 85px);
 }
 
 .chat-container {
@@ -41,13 +42,18 @@ div.conteiner {
   grid-area: header;
   /* Estilos para o cabeçalho */
   padding: 5px 15px;
-  background-color: #fff;
-  box-shadow: 0 1px 10px rgba(151,164,175,.1);
-  margin-bottom: 30px;
+  // background-color: #fff;
+  // box-shadow: 0 1px 10px rgba(151,164,175,.1);
+  margin-bottom: 20px;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 
   h1{
-    color: #1267fc;
+    color: #fb4402;
     font-weight: 500;
   }
 }
